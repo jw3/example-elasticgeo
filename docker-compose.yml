@@ -23,27 +23,11 @@ geoserver:
   ports:
     - "8080:8080"
   links:
-    - postgres
     - elastic
   environment:
     SERVICE_NAME: geoserver
     SERVICE_TAGS: gis,wms,wfs,imagery
     SERVICE_CHECK_HTTP: /
-    SERVICE_CHECK_INTERVAL: 15s
-    SERVICE_CHECK_TIMEOUT: 1s
-
-postgres:
-  image: kartoza/postgis:9.4-2.1
-  dns:
-    - "172.17.0.1"
-  dns_search:
-    - "service.consul"
-  ports:
-    - "5432:5432"
-  environment:
-    SERVICE_NAME: postgres
-    SERVICE_TAGS: db,gis
-    SERVICE_CHECK_TCP: true
     SERVICE_CHECK_INTERVAL: 15s
     SERVICE_CHECK_TIMEOUT: 1s
 
@@ -55,6 +39,6 @@ elastic:
   environment:
     SERVICE_NAME: elasticsearch
     SERVICE_TAGS: search,gis
-    SERVICE_CHECK_TCP: true
+    SERVICE_CHECK_TCP: "true"
     SERVICE_CHECK_INTERVAL: 15s
     SERVICE_CHECK_TIMEOUT: 1s
