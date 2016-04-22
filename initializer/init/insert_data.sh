@@ -2,282 +2,281 @@
 
 insert_data() {
     declare eshost="$1" esindex="$2"
+    echo "Inserting records to spatial index [$esindex] on [$eshost]"
 
-    local res=""
-
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Anchorage", "state": "AK","location": {"lat": "61.2180556", "lon": "-149.9002778"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Birmingham", "state": "AL","location": {"lat": "33.5206608", "lon": "-86.8024900"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Huntsville", "state": "AL","location": {"lat": "34.7303688", "lon": "-86.5861037"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mobile", "state": "AL","location": {"lat": "30.6943566", "lon": "-88.0430541"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Montgomery", "state": "AL","location": {"lat": "32.3668052", "lon": "-86.2999689"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Little Rock", "state": "AR","location": {"lat": "34.7464809", "lon": "-92.2895948"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chandler", "state": "AZ","location": {"lat": "33.3061605", "lon": "-111.8412502"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Gilbert", "state": "AZ","location": {"lat": "33.3528264", "lon": "-111.7890270"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Glendale", "state": "AZ","location": {"lat": "33.5386523", "lon": "-112.1859866"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mesa", "state": "AZ","location": {"lat": "33.4222685", "lon": "-111.8226402"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Peoria", "state": "AZ","location": {"lat": "33.5805955", "lon": "-112.2373779"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Phoenix", "state": "AZ","location": {"lat": "33.4483771", "lon": "-112.0740373"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Scottsdale", "state": "AZ","location": {"lat": "33.5092103", "lon": "-111.8990327"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tempe", "state": "AZ","location": {"lat": "33.4147680", "lon": "-111.9093095"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tempe Junction", "state": "AZ","location": {"lat": "33.4142123", "lon": "-111.9434772"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tucson", "state": "AZ","location": {"lat": "32.2217429", "lon": "-110.9264790"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Anaheim", "state": "CA","location": {"lat": "33.8352932", "lon": "-117.9145036"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Antioch", "state": "CA","location": {"lat": "38.0049214", "lon": "-121.8057890"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bakersfield", "state": "CA","location": {"lat": "35.3732921", "lon": "-119.0187125"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Berkeley", "state": "CA","location": {"lat": "37.8715926", "lon": "-122.2727470"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Burbank", "state": "CA","location": {"lat": "34.1808392", "lon": "-118.3089661"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chula Vista", "state": "CA","location": {"lat": "32.6400541", "lon": "-117.0841955"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Concord", "state": "CA","location": {"lat": "37.9779777", "lon": "-122.0310733"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Corona", "state": "CA","location": {"lat": "33.8752935", "lon": "-117.5664384"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Costa Mesa", "state": "CA","location": {"lat": "33.6411316", "lon": "-117.9186689"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Downey", "state": "CA","location": {"lat": "33.9400143", "lon": "-118.1325688"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Los Angeles", "state": "CA","location": {"lat": "34.0239015", "lon": "-118.1720157"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "El Monte", "state": "CA","location": {"lat": "34.0686207", "lon": "-118.0275667"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Escondido", "state": "CA","location": {"lat": "33.1192068", "lon": "-117.0864210"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fairfield", "state": "CA","location": {"lat": "38.2493581", "lon": "-122.0399663"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fontana", "state": "CA","location": {"lat": "34.0922335", "lon": "-117.4350480"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fremont", "state": "CA","location": {"lat": "37.5482697", "lon": "-121.9885719"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fresno", "state": "CA","location": {"lat": "36.7477272", "lon": "-119.7723661"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fullerton", "state": "CA","location": {"lat": "33.8702924", "lon": "-117.9253380"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Garden Grove", "state": "CA","location": {"lat": "33.7739053", "lon": "-117.9414477"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Glendale", "state": "CA","location": {"lat": "34.1425078", "lon": "-118.2550750"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hayward", "state": "CA","location": {"lat": "37.6688205", "lon": "-122.0807964"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hollywood", "state": "CA","location": {"lat": "34.0983425", "lon": "-118.3267434"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Huntington Beach", "state": "CA","location": {"lat": "33.6602970", "lon": "-117.9992265"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Inglewood", "state": "CA","location": {"lat": "33.9616801", "lon": "-118.3531311"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Irvine", "state": "CA","location": {"lat": "33.6694649", "lon": "-117.8231107"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lancaster", "state": "CA","location": {"lat": "34.6980406", "lon": "-118.1367393"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Long Beach", "state": "CA","location": {"lat": "33.7669623", "lon": "-118.1892348"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Los Angeles", "state": "CA","location": {"lat": "34.0522342", "lon": "-118.2436849"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Modesto", "state": "CA","location": {"lat": "37.6390972", "lon": "-120.9968782"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Moreno Valley", "state": "CA","location": {"lat": "33.9375170", "lon": "-117.2305944"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Glendale", "state": "CA","location": {"lat": "34.1605626", "lon": "-118.2645198"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Norwalk", "state": "CA","location": {"lat": "33.9022367", "lon": "-118.0817330"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oakland", "state": "CA","location": {"lat": "37.8043722", "lon": "-122.2708026"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oceanside", "state": "CA","location": {"lat": "33.1958696", "lon": "-117.3794834"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Ontario", "state": "CA","location": {"lat": "34.0633443", "lon": "-117.6508876"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Orange", "state": "CA","location": {"lat": "33.7877945", "lon": "-117.8531119"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oxnard", "state": "CA","location": {"lat": "34.1975048", "lon": "-119.1770516"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oxnard Shores", "state": "CA","location": {"lat": "34.1908379", "lon": "-119.2414984"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Palmdale", "state": "CA","location": {"lat": "34.5794343", "lon": "-118.1164613"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pasadena", "state": "CA","location": {"lat": "34.1477849", "lon": "-118.1445155"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pomona", "state": "CA","location": {"lat": "34.0552886", "lon": "-117.7522793"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rancho Cucamonga", "state": "CA","location": {"lat": "34.1063989", "lon": "-117.5931084"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rialto", "state": "CA","location": {"lat": "34.1064001", "lon": "-117.3703235"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richmond", "state": "CA","location": {"lat": "37.9357576", "lon": "-122.3477486"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Riverside", "state": "CA","location": {"lat": "33.9533487", "lon": "-117.3961564"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Roseville", "state": "CA","location": {"lat": "38.7521235", "lon": "-121.2880059"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sacramento", "state": "CA","location": {"lat": "38.5815719", "lon": "-121.4943996"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salinas", "state": "CA","location": {"lat": "36.6777372", "lon": "-121.6555013"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Bernardino", "state": "CA","location": {"lat": "34.1083449", "lon": "-117.2897652"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Diego", "state": "CA","location": {"lat": "32.7153292", "lon": "-117.1572551"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Francisco", "state": "CA","location": {"lat": "37.7749295", "lon": "-122.4194155"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Jose", "state": "CA","location": {"lat": "37.3393857", "lon": "-121.8949555"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Ana", "state": "CA","location": {"lat": "33.7455731", "lon": "-117.8678338"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Clara", "state": "CA","location": {"lat": "37.3541080", "lon": "-121.9552356"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Clarita", "state": "CA","location": {"lat": "34.3916641", "lon": "-118.5425860"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Rosa", "state": "CA","location": {"lat": "38.4404675", "lon": "-122.7144314"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Simi Valley", "state": "CA","location": {"lat": "34.2694474", "lon": "-118.7814820"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Stockton", "state": "CA","location": {"lat": "37.9577016", "lon": "-121.2907796"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sunnyvale", "state": "CA","location": {"lat": "37.3688301", "lon": "-122.0363496"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Thousand Oaks", "state": "CA","location": {"lat": "34.1705609", "lon": "-118.8375937"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Torrance", "state": "CA","location": {"lat": "33.8358492", "lon": "-118.3406288"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Vallejo", "state": "CA","location": {"lat": "38.1040864", "lon": "-122.2566367"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Visalia", "state": "CA","location": {"lat": "36.3302284", "lon": "-119.2920585"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Covina", "state": "CA","location": {"lat": "34.0686208", "lon": "-117.9389526"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arvada", "state": "CO","location": {"lat": "39.8027644", "lon": "-105.0874842"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Aurora", "state": "CO","location": {"lat": "39.7294319", "lon": "-104.8319195"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Colorado Springs", "state": "CO","location": {"lat": "38.8338816", "lon": "-104.8213634"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Denver", "state": "CO","location": {"lat": "39.7391536", "lon": "-104.9847034"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Collins", "state": "CO","location": {"lat": "40.5852602", "lon": "-105.0844230"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Highlands Ranch", "state": "CO","location": {"lat": "39.5538771", "lon": "-104.9694264"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lakewood", "state": "CO","location": {"lat": "39.7047095", "lon": "-105.0813734"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pueblo", "state": "CO","location": {"lat": "38.2544472", "lon": "-104.6091410"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Thornton", "state": "CO","location": {"lat": "39.8680412", "lon": "-104.9719243"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Westminster", "state": "CO","location": {"lat": "39.8366528", "lon": "-105.0372046"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bridgeport", "state": "CT","location": {"lat": "41.1670412", "lon": "-73.2048348"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hartford", "state": "CT","location": {"lat": "41.7637111", "lon": "-72.6850932"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New Haven", "state": "CT","location": {"lat": "41.3081527", "lon": "-72.9281578"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Stamford", "state": "CT","location": {"lat": "41.1381518", "lon": "-73.5434574"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Stamford", "state": "CT","location": {"lat": "41.0534302", "lon": "-73.5387341"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Waterbury", "state": "CT","location": {"lat": "41.5581525", "lon": "-73.0514966"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Washington", "state": "DC","location": {"lat": "38.8951118", "lon": "-77.0363658"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cape Coral", "state": "FL","location": {"lat": "26.5628537", "lon": "-81.9495331"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Clearwater", "state": "FL","location": {"lat": "27.9658533", "lon": "-82.8001026"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Coral Springs", "state": "FL","location": {"lat": "26.2711920", "lon": "-80.2706044"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Lauderdale", "state": "FL","location": {"lat": "26.1223084", "lon": "-80.1433786"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Gainesville", "state": "FL","location": {"lat": "29.6516344", "lon": "-82.3248262"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hialeah", "state": "FL","location": {"lat": "25.8575963", "lon": "-80.2781057"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hollywood", "state": "FL","location": {"lat": "26.0112014", "lon": "-80.1494901"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jacksonville", "state": "FL","location": {"lat": "30.3321838", "lon": "-81.6556510"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Miami", "state": "FL","location": {"lat": "25.7742658", "lon": "-80.1936589"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Orlando", "state": "FL","location": {"lat": "28.5383355", "lon": "-81.3792365"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pembroke Pines", "state": "FL","location": {"lat": "26.0031465", "lon": "-80.2239370"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Port Saint Lucie", "state": "FL","location": {"lat": "27.2939333", "lon": "-80.3503283"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Petersburg", "state": "FL","location": {"lat": "27.7708606", "lon": "-82.6792661"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tallahassee", "state": "FL","location": {"lat": "30.4382559", "lon": "-84.2807329"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tampa", "state": "FL","location": {"lat": "27.9475216", "lon": "-82.4584279"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Atlanta", "state": "GA","location": {"lat": "33.7489954", "lon": "-84.3879824"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbus", "state": "GA","location": {"lat": "32.4609764", "lon": "-84.9877094"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Savannah", "state": "GA","location": {"lat": "32.0835407", "lon": "-81.0998342"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Honolulu", "state": "HI","location": {"lat": "21.3069444", "lon": "-157.8583333"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cedar Rapids", "state": "IA","location": {"lat": "42.0083328", "lon": "-91.6440683"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Des Moines", "state": "IA","location": {"lat": "41.6005448", "lon": "-93.6091064"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Boise", "state": "ID","location": {"lat": "43.6135002", "lon": "-116.2034505"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Aurora", "state": "IL","location": {"lat": "41.7605849", "lon": "-88.3200715"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chicago", "state": "IL","location": {"lat": "41.8500330", "lon": "-87.6500523"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Joliet", "state": "IL","location": {"lat": "41.5250310", "lon": "-88.0817252"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Naperville", "state": "IL","location": {"lat": "41.7858629", "lon": "-88.1472893"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Peoria", "state": "IL","location": {"lat": "40.7175374", "lon": "-89.5842635"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Peoria", "state": "IL","location": {"lat": "40.6936488", "lon": "-89.5889864"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rockford", "state": "IL","location": {"lat": "42.2711311", "lon": "-89.0939952"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "IL","location": {"lat": "39.8017171", "lon": "-89.6437107"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Evansville", "state": "IN","location": {"lat": "37.9747644", "lon": "-87.5558482"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Wayne", "state": "IN","location": {"lat": "41.1306041", "lon": "-85.1288597"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Indianapolis", "state": "IN","location": {"lat": "39.7683765", "lon": "-86.1580423"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "South Bend", "state": "IN","location": {"lat": "41.6833813", "lon": "-86.2500066"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Kansas City", "state": "KS","location": {"lat": "39.1141708", "lon": "-94.6274570"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Olathe", "state": "KS","location": {"lat": "38.8813958", "lon": "-94.8191285"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Overland Park", "state": "KS","location": {"lat": "38.9822282", "lon": "-94.6707917"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Topeka", "state": "KS","location": {"lat": "39.0483336", "lon": "-95.6780371"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Wichita", "state": "KS","location": {"lat": "37.6922361", "lon": "-97.3375448"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lexington", "state": "KY","location": {"lat": "37.9886892", "lon": "-84.4777153"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lexington-Fayette", "state": "KY","location": {"lat": "38.0497996", "lon": "-84.4585485"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Louisville", "state": "KY","location": {"lat": "38.2542376", "lon": "-85.7594070"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Baton Rouge", "state": "LA","location": {"lat": "30.4507462", "lon": "-91.1545510"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lafayette", "state": "LA","location": {"lat": "30.2240897", "lon": "-92.0198427"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Metairie", "state": "LA","location": {"lat": "29.9840922", "lon": "-90.1528519"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Metairie Terrace", "state": "LA","location": {"lat": "29.9785368", "lon": "-90.1639634"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New Orleans", "state": "LA","location": {"lat": "29.9546482", "lon": "-90.0750720"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Shreveport", "state": "LA","location": {"lat": "32.5251516", "lon": "-93.7501789"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Boston", "state": "MA","location": {"lat": "42.3584308", "lon": "-71.0597732"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cambridge", "state": "MA","location": {"lat": "42.3750970", "lon": "-71.1056079"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lowell", "state": "MA","location": {"lat": "42.6334247", "lon": "-71.3161718"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "South Boston", "state": "MA","location": {"lat": "42.3334312", "lon": "-71.0494949"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "MA","location": {"lat": "42.1014831", "lon": "-72.5898110"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Worcester", "state": "MA","location": {"lat": "42.2625932", "lon": "-71.8022934"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Baltimore", "state": "MD","location": {"lat": "39.2903848", "lon": "-76.6121893"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Ann Arbor", "state": "MI","location": {"lat": "42.2775628", "lon": "-83.7408829"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Detroit", "state": "MI","location": {"lat": "42.3314270", "lon": "-83.0457538"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Flint", "state": "MI","location": {"lat": "43.0125274", "lon": "-83.6874562"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Grand Rapids", "state": "MI","location": {"lat": "42.9633599", "lon": "-85.6680863"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lansing", "state": "MI","location": {"lat": "42.7325350", "lon": "-84.5555347"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sterling Heights", "state": "MI","location": {"lat": "42.5803122", "lon": "-83.0302033"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Warren", "state": "MI","location": {"lat": "42.4775363", "lon": "-83.0277000"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Minneapolis", "state": "MN","location": {"lat": "44.9799654", "lon": "-93.2638361"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Paul", "state": "MN","location": {"lat": "44.9444101", "lon": "-93.0932742"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Independence", "state": "MO","location": {"lat": "39.0955608", "lon": "-94.3552275"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Independence", "state": "MO","location": {"lat": "39.0911161", "lon": "-94.4155068"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Kansas City", "state": "MO","location": {"lat": "39.0997266", "lon": "-94.5785667"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Kansas City", "state": "MO","location": {"lat": "39.1300040", "lon": "-94.5621773"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Louis", "state": "MO","location": {"lat": "38.6272733", "lon": "-90.1978889"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "MO","location": {"lat": "37.2153260", "lon": "-93.2982436"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jackson", "state": "MS","location": {"lat": "32.2987573", "lon": "-90.1848103"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cary", "state": "NC","location": {"lat": "35.7915400", "lon": "-78.7811169"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Charlotte", "state": "NC","location": {"lat": "35.2270869", "lon": "-80.8431268"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Durham", "state": "NC","location": {"lat": "35.9940329", "lon": "-78.8986190"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fayetteville", "state": "NC","location": {"lat": "35.0526641", "lon": "-78.8783585"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Greensboro", "state": "NC","location": {"lat": "36.0726355", "lon": "-79.7919754"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Raleigh", "state": "NC","location": {"lat": "35.7720960", "lon": "-78.6386145"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Raleigh", "state": "NC","location": {"lat": "35.7868182", "lon": "-78.6638927"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Winston-Salem", "state": "NC","location": {"lat": "36.0998596", "lon": "-80.2442160"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lincoln", "state": "NE","location": {"lat": "40.8000011", "lon": "-96.6669599"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Omaha", "state": "NE","location": {"lat": "41.2586096", "lon": "-95.9377920"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Manchester", "state": "NH","location": {"lat": "42.9956397", "lon": "-71.4547891"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Edison", "state": "NJ","location": {"lat": "40.5187154", "lon": "-74.4120953"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Elizabeth", "state": "NJ","location": {"lat": "40.6639916", "lon": "-74.2107006"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jersey City", "state": "NJ","location": {"lat": "40.7281575", "lon": "-74.0776417"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Newark", "state": "NJ","location": {"lat": "40.7356570", "lon": "-74.1723667"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Paterson", "state": "NJ","location": {"lat": "40.9167654", "lon": "-74.1718110"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Toms River", "state": "NJ","location": {"lat": "39.9537291", "lon": "-74.1979192"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Albuquerque", "state": "NM","location": {"lat": "35.0844909", "lon": "-106.6511367"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Henderson", "state": "NV","location": {"lat": "36.0396988", "lon": "-114.9819368"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Las Vegas", "state": "NV","location": {"lat": "36.1749705", "lon": "-115.1372230"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Las Vegas", "state": "NV","location": {"lat": "36.1988592", "lon": "-115.1175013"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Paradise", "state": "NV","location": {"lat": "36.0971945", "lon": "-115.1466648"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Reno", "state": "NV","location": {"lat": "39.5296329", "lon": "-119.8138027"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Spring Valley", "state": "NV","location": {"lat": "36.1080258", "lon": "-115.2450006"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sunrise Manor", "state": "NV","location": {"lat": "36.2110819", "lon": "-115.0730563"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Brooklyn", "state": "NY","location": {"lat": "40.6501038", "lon": "-73.9495823"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Buffalo", "state": "NY","location": {"lat": "42.8864468", "lon": "-78.8783689"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East New York", "state": "NY","location": {"lat": "40.6667702", "lon": "-73.8823583"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New York City", "state": "NY","location": {"lat": "40.7142691", "lon": "-74.0059729"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rochester", "state": "NY","location": {"lat": "43.1547845", "lon": "-77.6155568"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Syracuse", "state": "NY","location": {"lat": "43.0481221", "lon": "-76.1474244"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Yonkers", "state": "NY","location": {"lat": "40.9312099", "lon": "-73.8987469"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Akron", "state": "OH","location": {"lat": "41.0814447", "lon": "-81.5190053"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cincinnati", "state": "OH","location": {"lat": "39.1620036", "lon": "-84.4568863"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cleveland", "state": "OH","location": {"lat": "41.4994954", "lon": "-81.6954088"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbus", "state": "OH","location": {"lat": "39.9611755", "lon": "-82.9987942"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Dayton", "state": "OH","location": {"lat": "39.7589478", "lon": "-84.1916069"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Toledo", "state": "OH","location": {"lat": "41.6639383", "lon": "-83.5552120"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oklahoma City", "state": "OK","location": {"lat": "35.4675602", "lon": "-97.5164276"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tulsa", "state": "OK","location": {"lat": "36.1539816", "lon": "-95.9927750"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Eugene", "state": "OR","location": {"lat": "44.0520691", "lon": "-123.0867536"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Portland", "state": "OR","location": {"lat": "45.5234515", "lon": "-122.6762071"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salem", "state": "OR","location": {"lat": "44.9428975", "lon": "-123.0350963"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Allentown", "state": "PA","location": {"lat": "40.6084305", "lon": "-75.4901833"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Philadelphia", "state": "PA","location": {"lat": "39.9523350", "lon": "-75.1637890"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pittsburgh", "state": "PA","location": {"lat": "40.4406248", "lon": "-79.9958864"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Providence", "state": "RI","location": {"lat": "41.8239891", "lon": "-71.4128343"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbia", "state": "SC","location": {"lat": "34.0007104", "lon": "-81.0348144"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sioux Falls", "state": "SD","location": {"lat": "43.5499749", "lon": "-96.7003270"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chattanooga", "state": "TN","location": {"lat": "35.0456297", "lon": "-85.3096801"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Clarksville", "state": "TN","location": {"lat": "36.5297706", "lon": "-87.3594529"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Chattanooga", "state": "TN","location": {"lat": "35.0653508", "lon": "-85.2491233"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Knoxville", "state": "TN","location": {"lat": "35.9606384", "lon": "-83.9207392"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Memphis", "state": "TN","location": {"lat": "35.1495343", "lon": "-90.0489801"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Nashville", "state": "TN","location": {"lat": "36.1658899", "lon": "-86.7844432"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New South Memphis", "state": "TN","location": {"lat": "35.0867579", "lon": "-90.0567584"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Abilene", "state": "TX","location": {"lat": "32.4487364", "lon": "-99.7331439"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Amarillo", "state": "TX","location": {"lat": "35.2219971", "lon": "-101.8312969"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arlington", "state": "TX","location": {"lat": "32.7356870", "lon": "-97.1080656"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Austin", "state": "TX","location": {"lat": "30.2671530", "lon": "-97.7430608"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Beaumont", "state": "TX","location": {"lat": "30.0860459", "lon": "-94.1018461"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Brownsville", "state": "TX","location": {"lat": "25.9017472", "lon": "-97.4974838"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Carrollton", "state": "TX","location": {"lat": "32.9537349", "lon": "-96.8902816"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Corpus Christi", "state": "TX","location": {"lat": "27.8005828", "lon": "-97.3963810"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Dallas", "state": "TX","location": {"lat": "32.7830556", "lon": "-96.8066667"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Denton", "state": "TX","location": {"lat": "33.2148412", "lon": "-97.1330683"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "El Paso", "state": "TX","location": {"lat": "31.7587198", "lon": "-106.4869314"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Worth", "state": "TX","location": {"lat": "32.7254090", "lon": "-97.3208496"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Garland", "state": "TX","location": {"lat": "32.9126240", "lon": "-96.6388833"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Grand Prairie", "state": "TX","location": {"lat": "32.7459645", "lon": "-96.9977846"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Houston", "state": "TX","location": {"lat": "29.7632836", "lon": "-95.3632715"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Irving", "state": "TX","location": {"lat": "32.8140177", "lon": "-96.9488945"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Killeen", "state": "TX","location": {"lat": "31.1171194", "lon": "-97.7277959"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Laredo", "state": "TX","location": {"lat": "27.5064070", "lon": "-99.5075421"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lubbock", "state": "TX","location": {"lat": "33.5778631", "lon": "-101.8551665"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "McAllen", "state": "TX","location": {"lat": "26.2034071", "lon": "-98.2300124"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mesquite", "state": "TX","location": {"lat": "32.7667955", "lon": "-96.5991593"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pasadena", "state": "TX","location": {"lat": "29.6910625", "lon": "-95.2091006"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Plano", "state": "TX","location": {"lat": "33.0198431", "lon": "-96.6988856"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richardson", "state": "TX","location": {"lat": "32.9481789", "lon": "-96.7297206"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Antonio", "state": "TX","location": {"lat": "29.4241219", "lon": "-98.4936282"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Waco", "state": "TX","location": {"lat": "31.5493330", "lon": "-97.1466695"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Wichita Falls", "state": "TX","location": {"lat": "33.9137085", "lon": "-98.4933873"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Provo", "state": "UT","location": {"lat": "40.2338438", "lon": "-111.6585337"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salt Lake City", "state": "UT","location": {"lat": "40.7607794", "lon": "-111.8910474"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Jordan", "state": "UT","location": {"lat": "40.6096698", "lon": "-111.9391031"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Valley City", "state": "UT","location": {"lat": "40.6916132", "lon": "-112.0010501"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Alexandria", "state": "VA","location": {"lat": "38.8048356", "lon": "-77.0469214"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arlington", "state": "VA","location": {"lat": "38.8903896", "lon": "-77.0841446"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chesapeake", "state": "VA","location": {"lat": "36.8190369", "lon": "-76.2749399"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Hampton", "state": "VA","location": {"lat": "37.0373684", "lon": "-76.3316100"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hampton", "state": "VA","location": {"lat": "37.0298687", "lon": "-76.3452218"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Newport News", "state": "VA","location": {"lat": "36.9787588", "lon": "-76.4280030"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Norfolk", "state": "VA","location": {"lat": "36.8468146", "lon": "-76.2852183"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Portsmouth", "state": "VA","location": {"lat": "36.8354258", "lon": "-76.2982742"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richmond", "state": "VA","location": {"lat": "37.5537575", "lon": "-77.4602617"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Virginia Beach", "state": "VA","location": {"lat": "36.8529263", "lon": "-75.9779850"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bellevue", "state": "WA","location": {"lat": "47.6103770", "lon": "-122.2006786"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Seattle", "state": "WA","location": {"lat": "47.6062095", "lon": "-122.3320708"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Spokane", "state": "WA","location": {"lat": "47.6587803", "lon": "-117.4260466"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tacoma", "state": "WA","location": {"lat": "47.2528769", "lon": "-122.4442906"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Vancouver", "state": "WA","location": {"lat": "45.6387281", "lon": "-122.6614861"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Green Bay", "state": "WI","location": {"lat": "44.5191590", "lon": "-88.0198260"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Madison", "state": "WI","location": {"lat": "43.0730517", "lon": "-89.4012302"}}')
-    res=$(curl -s -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Milwaukee", "state": "WI","location": {"lat": "43.0389025", "lon": "-87.9064736"}}')
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Anchorage", "state": "AK","location": {"lat": "61.2180556", "lon": "-149.9002778"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Birmingham", "state": "AL","location": {"lat": "33.5206608", "lon": "-86.8024900"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Huntsville", "state": "AL","location": {"lat": "34.7303688", "lon": "-86.5861037"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mobile", "state": "AL","location": {"lat": "30.6943566", "lon": "-88.0430541"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Montgomery", "state": "AL","location": {"lat": "32.3668052", "lon": "-86.2999689"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Little Rock", "state": "AR","location": {"lat": "34.7464809", "lon": "-92.2895948"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chandler", "state": "AZ","location": {"lat": "33.3061605", "lon": "-111.8412502"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Gilbert", "state": "AZ","location": {"lat": "33.3528264", "lon": "-111.7890270"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Glendale", "state": "AZ","location": {"lat": "33.5386523", "lon": "-112.1859866"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mesa", "state": "AZ","location": {"lat": "33.4222685", "lon": "-111.8226402"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Peoria", "state": "AZ","location": {"lat": "33.5805955", "lon": "-112.2373779"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Phoenix", "state": "AZ","location": {"lat": "33.4483771", "lon": "-112.0740373"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Scottsdale", "state": "AZ","location": {"lat": "33.5092103", "lon": "-111.8990327"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tempe", "state": "AZ","location": {"lat": "33.4147680", "lon": "-111.9093095"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tempe Junction", "state": "AZ","location": {"lat": "33.4142123", "lon": "-111.9434772"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tucson", "state": "AZ","location": {"lat": "32.2217429", "lon": "-110.9264790"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Anaheim", "state": "CA","location": {"lat": "33.8352932", "lon": "-117.9145036"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Antioch", "state": "CA","location": {"lat": "38.0049214", "lon": "-121.8057890"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bakersfield", "state": "CA","location": {"lat": "35.3732921", "lon": "-119.0187125"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Berkeley", "state": "CA","location": {"lat": "37.8715926", "lon": "-122.2727470"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Burbank", "state": "CA","location": {"lat": "34.1808392", "lon": "-118.3089661"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chula Vista", "state": "CA","location": {"lat": "32.6400541", "lon": "-117.0841955"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Concord", "state": "CA","location": {"lat": "37.9779777", "lon": "-122.0310733"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Corona", "state": "CA","location": {"lat": "33.8752935", "lon": "-117.5664384"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Costa Mesa", "state": "CA","location": {"lat": "33.6411316", "lon": "-117.9186689"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Downey", "state": "CA","location": {"lat": "33.9400143", "lon": "-118.1325688"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Los Angeles", "state": "CA","location": {"lat": "34.0239015", "lon": "-118.1720157"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "El Monte", "state": "CA","location": {"lat": "34.0686207", "lon": "-118.0275667"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Escondido", "state": "CA","location": {"lat": "33.1192068", "lon": "-117.0864210"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fairfield", "state": "CA","location": {"lat": "38.2493581", "lon": "-122.0399663"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fontana", "state": "CA","location": {"lat": "34.0922335", "lon": "-117.4350480"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fremont", "state": "CA","location": {"lat": "37.5482697", "lon": "-121.9885719"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fresno", "state": "CA","location": {"lat": "36.7477272", "lon": "-119.7723661"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fullerton", "state": "CA","location": {"lat": "33.8702924", "lon": "-117.9253380"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Garden Grove", "state": "CA","location": {"lat": "33.7739053", "lon": "-117.9414477"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Glendale", "state": "CA","location": {"lat": "34.1425078", "lon": "-118.2550750"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hayward", "state": "CA","location": {"lat": "37.6688205", "lon": "-122.0807964"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hollywood", "state": "CA","location": {"lat": "34.0983425", "lon": "-118.3267434"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Huntington Beach", "state": "CA","location": {"lat": "33.6602970", "lon": "-117.9992265"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Inglewood", "state": "CA","location": {"lat": "33.9616801", "lon": "-118.3531311"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Irvine", "state": "CA","location": {"lat": "33.6694649", "lon": "-117.8231107"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lancaster", "state": "CA","location": {"lat": "34.6980406", "lon": "-118.1367393"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Long Beach", "state": "CA","location": {"lat": "33.7669623", "lon": "-118.1892348"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Los Angeles", "state": "CA","location": {"lat": "34.0522342", "lon": "-118.2436849"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Modesto", "state": "CA","location": {"lat": "37.6390972", "lon": "-120.9968782"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Moreno Valley", "state": "CA","location": {"lat": "33.9375170", "lon": "-117.2305944"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Glendale", "state": "CA","location": {"lat": "34.1605626", "lon": "-118.2645198"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Norwalk", "state": "CA","location": {"lat": "33.9022367", "lon": "-118.0817330"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oakland", "state": "CA","location": {"lat": "37.8043722", "lon": "-122.2708026"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oceanside", "state": "CA","location": {"lat": "33.1958696", "lon": "-117.3794834"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Ontario", "state": "CA","location": {"lat": "34.0633443", "lon": "-117.6508876"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Orange", "state": "CA","location": {"lat": "33.7877945", "lon": "-117.8531119"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oxnard", "state": "CA","location": {"lat": "34.1975048", "lon": "-119.1770516"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oxnard Shores", "state": "CA","location": {"lat": "34.1908379", "lon": "-119.2414984"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Palmdale", "state": "CA","location": {"lat": "34.5794343", "lon": "-118.1164613"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pasadena", "state": "CA","location": {"lat": "34.1477849", "lon": "-118.1445155"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pomona", "state": "CA","location": {"lat": "34.0552886", "lon": "-117.7522793"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rancho Cucamonga", "state": "CA","location": {"lat": "34.1063989", "lon": "-117.5931084"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rialto", "state": "CA","location": {"lat": "34.1064001", "lon": "-117.3703235"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richmond", "state": "CA","location": {"lat": "37.9357576", "lon": "-122.3477486"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Riverside", "state": "CA","location": {"lat": "33.9533487", "lon": "-117.3961564"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Roseville", "state": "CA","location": {"lat": "38.7521235", "lon": "-121.2880059"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sacramento", "state": "CA","location": {"lat": "38.5815719", "lon": "-121.4943996"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salinas", "state": "CA","location": {"lat": "36.6777372", "lon": "-121.6555013"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Bernardino", "state": "CA","location": {"lat": "34.1083449", "lon": "-117.2897652"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Diego", "state": "CA","location": {"lat": "32.7153292", "lon": "-117.1572551"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Francisco", "state": "CA","location": {"lat": "37.7749295", "lon": "-122.4194155"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Jose", "state": "CA","location": {"lat": "37.3393857", "lon": "-121.8949555"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Ana", "state": "CA","location": {"lat": "33.7455731", "lon": "-117.8678338"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Clara", "state": "CA","location": {"lat": "37.3541080", "lon": "-121.9552356"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Clarita", "state": "CA","location": {"lat": "34.3916641", "lon": "-118.5425860"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Santa Rosa", "state": "CA","location": {"lat": "38.4404675", "lon": "-122.7144314"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Simi Valley", "state": "CA","location": {"lat": "34.2694474", "lon": "-118.7814820"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Stockton", "state": "CA","location": {"lat": "37.9577016", "lon": "-121.2907796"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sunnyvale", "state": "CA","location": {"lat": "37.3688301", "lon": "-122.0363496"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Thousand Oaks", "state": "CA","location": {"lat": "34.1705609", "lon": "-118.8375937"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Torrance", "state": "CA","location": {"lat": "33.8358492", "lon": "-118.3406288"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Vallejo", "state": "CA","location": {"lat": "38.1040864", "lon": "-122.2566367"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Visalia", "state": "CA","location": {"lat": "36.3302284", "lon": "-119.2920585"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Covina", "state": "CA","location": {"lat": "34.0686208", "lon": "-117.9389526"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arvada", "state": "CO","location": {"lat": "39.8027644", "lon": "-105.0874842"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Aurora", "state": "CO","location": {"lat": "39.7294319", "lon": "-104.8319195"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Colorado Springs", "state": "CO","location": {"lat": "38.8338816", "lon": "-104.8213634"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Denver", "state": "CO","location": {"lat": "39.7391536", "lon": "-104.9847034"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Collins", "state": "CO","location": {"lat": "40.5852602", "lon": "-105.0844230"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Highlands Ranch", "state": "CO","location": {"lat": "39.5538771", "lon": "-104.9694264"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lakewood", "state": "CO","location": {"lat": "39.7047095", "lon": "-105.0813734"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pueblo", "state": "CO","location": {"lat": "38.2544472", "lon": "-104.6091410"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Thornton", "state": "CO","location": {"lat": "39.8680412", "lon": "-104.9719243"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Westminster", "state": "CO","location": {"lat": "39.8366528", "lon": "-105.0372046"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bridgeport", "state": "CT","location": {"lat": "41.1670412", "lon": "-73.2048348"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hartford", "state": "CT","location": {"lat": "41.7637111", "lon": "-72.6850932"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New Haven", "state": "CT","location": {"lat": "41.3081527", "lon": "-72.9281578"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Stamford", "state": "CT","location": {"lat": "41.1381518", "lon": "-73.5434574"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Stamford", "state": "CT","location": {"lat": "41.0534302", "lon": "-73.5387341"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Waterbury", "state": "CT","location": {"lat": "41.5581525", "lon": "-73.0514966"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Washington", "state": "DC","location": {"lat": "38.8951118", "lon": "-77.0363658"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cape Coral", "state": "FL","location": {"lat": "26.5628537", "lon": "-81.9495331"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Clearwater", "state": "FL","location": {"lat": "27.9658533", "lon": "-82.8001026"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Coral Springs", "state": "FL","location": {"lat": "26.2711920", "lon": "-80.2706044"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Lauderdale", "state": "FL","location": {"lat": "26.1223084", "lon": "-80.1433786"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Gainesville", "state": "FL","location": {"lat": "29.6516344", "lon": "-82.3248262"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hialeah", "state": "FL","location": {"lat": "25.8575963", "lon": "-80.2781057"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hollywood", "state": "FL","location": {"lat": "26.0112014", "lon": "-80.1494901"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jacksonville", "state": "FL","location": {"lat": "30.3321838", "lon": "-81.6556510"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Miami", "state": "FL","location": {"lat": "25.7742658", "lon": "-80.1936589"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Orlando", "state": "FL","location": {"lat": "28.5383355", "lon": "-81.3792365"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pembroke Pines", "state": "FL","location": {"lat": "26.0031465", "lon": "-80.2239370"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Port Saint Lucie", "state": "FL","location": {"lat": "27.2939333", "lon": "-80.3503283"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Petersburg", "state": "FL","location": {"lat": "27.7708606", "lon": "-82.6792661"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tallahassee", "state": "FL","location": {"lat": "30.4382559", "lon": "-84.2807329"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tampa", "state": "FL","location": {"lat": "27.9475216", "lon": "-82.4584279"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Atlanta", "state": "GA","location": {"lat": "33.7489954", "lon": "-84.3879824"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbus", "state": "GA","location": {"lat": "32.4609764", "lon": "-84.9877094"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Savannah", "state": "GA","location": {"lat": "32.0835407", "lon": "-81.0998342"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Honolulu", "state": "HI","location": {"lat": "21.3069444", "lon": "-157.8583333"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cedar Rapids", "state": "IA","location": {"lat": "42.0083328", "lon": "-91.6440683"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Des Moines", "state": "IA","location": {"lat": "41.6005448", "lon": "-93.6091064"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Boise", "state": "ID","location": {"lat": "43.6135002", "lon": "-116.2034505"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Aurora", "state": "IL","location": {"lat": "41.7605849", "lon": "-88.3200715"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chicago", "state": "IL","location": {"lat": "41.8500330", "lon": "-87.6500523"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Joliet", "state": "IL","location": {"lat": "41.5250310", "lon": "-88.0817252"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Naperville", "state": "IL","location": {"lat": "41.7858629", "lon": "-88.1472893"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Peoria", "state": "IL","location": {"lat": "40.7175374", "lon": "-89.5842635"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Peoria", "state": "IL","location": {"lat": "40.6936488", "lon": "-89.5889864"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rockford", "state": "IL","location": {"lat": "42.2711311", "lon": "-89.0939952"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "IL","location": {"lat": "39.8017171", "lon": "-89.6437107"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Evansville", "state": "IN","location": {"lat": "37.9747644", "lon": "-87.5558482"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Wayne", "state": "IN","location": {"lat": "41.1306041", "lon": "-85.1288597"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Indianapolis", "state": "IN","location": {"lat": "39.7683765", "lon": "-86.1580423"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "South Bend", "state": "IN","location": {"lat": "41.6833813", "lon": "-86.2500066"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Kansas City", "state": "KS","location": {"lat": "39.1141708", "lon": "-94.6274570"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Olathe", "state": "KS","location": {"lat": "38.8813958", "lon": "-94.8191285"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Overland Park", "state": "KS","location": {"lat": "38.9822282", "lon": "-94.6707917"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Topeka", "state": "KS","location": {"lat": "39.0483336", "lon": "-95.6780371"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Wichita", "state": "KS","location": {"lat": "37.6922361", "lon": "-97.3375448"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lexington", "state": "KY","location": {"lat": "37.9886892", "lon": "-84.4777153"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lexington-Fayette", "state": "KY","location": {"lat": "38.0497996", "lon": "-84.4585485"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Louisville", "state": "KY","location": {"lat": "38.2542376", "lon": "-85.7594070"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Baton Rouge", "state": "LA","location": {"lat": "30.4507462", "lon": "-91.1545510"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lafayette", "state": "LA","location": {"lat": "30.2240897", "lon": "-92.0198427"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Metairie", "state": "LA","location": {"lat": "29.9840922", "lon": "-90.1528519"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Metairie Terrace", "state": "LA","location": {"lat": "29.9785368", "lon": "-90.1639634"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New Orleans", "state": "LA","location": {"lat": "29.9546482", "lon": "-90.0750720"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Shreveport", "state": "LA","location": {"lat": "32.5251516", "lon": "-93.7501789"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Boston", "state": "MA","location": {"lat": "42.3584308", "lon": "-71.0597732"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cambridge", "state": "MA","location": {"lat": "42.3750970", "lon": "-71.1056079"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lowell", "state": "MA","location": {"lat": "42.6334247", "lon": "-71.3161718"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "South Boston", "state": "MA","location": {"lat": "42.3334312", "lon": "-71.0494949"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "MA","location": {"lat": "42.1014831", "lon": "-72.5898110"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Worcester", "state": "MA","location": {"lat": "42.2625932", "lon": "-71.8022934"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Baltimore", "state": "MD","location": {"lat": "39.2903848", "lon": "-76.6121893"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Ann Arbor", "state": "MI","location": {"lat": "42.2775628", "lon": "-83.7408829"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Detroit", "state": "MI","location": {"lat": "42.3314270", "lon": "-83.0457538"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Flint", "state": "MI","location": {"lat": "43.0125274", "lon": "-83.6874562"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Grand Rapids", "state": "MI","location": {"lat": "42.9633599", "lon": "-85.6680863"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lansing", "state": "MI","location": {"lat": "42.7325350", "lon": "-84.5555347"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sterling Heights", "state": "MI","location": {"lat": "42.5803122", "lon": "-83.0302033"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Warren", "state": "MI","location": {"lat": "42.4775363", "lon": "-83.0277000"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Minneapolis", "state": "MN","location": {"lat": "44.9799654", "lon": "-93.2638361"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Paul", "state": "MN","location": {"lat": "44.9444101", "lon": "-93.0932742"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Independence", "state": "MO","location": {"lat": "39.0955608", "lon": "-94.3552275"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Independence", "state": "MO","location": {"lat": "39.0911161", "lon": "-94.4155068"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Kansas City", "state": "MO","location": {"lat": "39.0997266", "lon": "-94.5785667"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Kansas City", "state": "MO","location": {"lat": "39.1300040", "lon": "-94.5621773"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Saint Louis", "state": "MO","location": {"lat": "38.6272733", "lon": "-90.1978889"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Springfield", "state": "MO","location": {"lat": "37.2153260", "lon": "-93.2982436"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jackson", "state": "MS","location": {"lat": "32.2987573", "lon": "-90.1848103"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cary", "state": "NC","location": {"lat": "35.7915400", "lon": "-78.7811169"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Charlotte", "state": "NC","location": {"lat": "35.2270869", "lon": "-80.8431268"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Durham", "state": "NC","location": {"lat": "35.9940329", "lon": "-78.8986190"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fayetteville", "state": "NC","location": {"lat": "35.0526641", "lon": "-78.8783585"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Greensboro", "state": "NC","location": {"lat": "36.0726355", "lon": "-79.7919754"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Raleigh", "state": "NC","location": {"lat": "35.7720960", "lon": "-78.6386145"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Raleigh", "state": "NC","location": {"lat": "35.7868182", "lon": "-78.6638927"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Winston-Salem", "state": "NC","location": {"lat": "36.0998596", "lon": "-80.2442160"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lincoln", "state": "NE","location": {"lat": "40.8000011", "lon": "-96.6669599"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Omaha", "state": "NE","location": {"lat": "41.2586096", "lon": "-95.9377920"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Manchester", "state": "NH","location": {"lat": "42.9956397", "lon": "-71.4547891"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Edison", "state": "NJ","location": {"lat": "40.5187154", "lon": "-74.4120953"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Elizabeth", "state": "NJ","location": {"lat": "40.6639916", "lon": "-74.2107006"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Jersey City", "state": "NJ","location": {"lat": "40.7281575", "lon": "-74.0776417"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Newark", "state": "NJ","location": {"lat": "40.7356570", "lon": "-74.1723667"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Paterson", "state": "NJ","location": {"lat": "40.9167654", "lon": "-74.1718110"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Toms River", "state": "NJ","location": {"lat": "39.9537291", "lon": "-74.1979192"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Albuquerque", "state": "NM","location": {"lat": "35.0844909", "lon": "-106.6511367"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Henderson", "state": "NV","location": {"lat": "36.0396988", "lon": "-114.9819368"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Las Vegas", "state": "NV","location": {"lat": "36.1749705", "lon": "-115.1372230"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "North Las Vegas", "state": "NV","location": {"lat": "36.1988592", "lon": "-115.1175013"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Paradise", "state": "NV","location": {"lat": "36.0971945", "lon": "-115.1466648"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Reno", "state": "NV","location": {"lat": "39.5296329", "lon": "-119.8138027"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Spring Valley", "state": "NV","location": {"lat": "36.1080258", "lon": "-115.2450006"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sunrise Manor", "state": "NV","location": {"lat": "36.2110819", "lon": "-115.0730563"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Brooklyn", "state": "NY","location": {"lat": "40.6501038", "lon": "-73.9495823"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Buffalo", "state": "NY","location": {"lat": "42.8864468", "lon": "-78.8783689"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East New York", "state": "NY","location": {"lat": "40.6667702", "lon": "-73.8823583"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New York City", "state": "NY","location": {"lat": "40.7142691", "lon": "-74.0059729"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Rochester", "state": "NY","location": {"lat": "43.1547845", "lon": "-77.6155568"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Syracuse", "state": "NY","location": {"lat": "43.0481221", "lon": "-76.1474244"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Yonkers", "state": "NY","location": {"lat": "40.9312099", "lon": "-73.8987469"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Akron", "state": "OH","location": {"lat": "41.0814447", "lon": "-81.5190053"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cincinnati", "state": "OH","location": {"lat": "39.1620036", "lon": "-84.4568863"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Cleveland", "state": "OH","location": {"lat": "41.4994954", "lon": "-81.6954088"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbus", "state": "OH","location": {"lat": "39.9611755", "lon": "-82.9987942"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Dayton", "state": "OH","location": {"lat": "39.7589478", "lon": "-84.1916069"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Toledo", "state": "OH","location": {"lat": "41.6639383", "lon": "-83.5552120"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Oklahoma City", "state": "OK","location": {"lat": "35.4675602", "lon": "-97.5164276"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tulsa", "state": "OK","location": {"lat": "36.1539816", "lon": "-95.9927750"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Eugene", "state": "OR","location": {"lat": "44.0520691", "lon": "-123.0867536"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Portland", "state": "OR","location": {"lat": "45.5234515", "lon": "-122.6762071"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salem", "state": "OR","location": {"lat": "44.9428975", "lon": "-123.0350963"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Allentown", "state": "PA","location": {"lat": "40.6084305", "lon": "-75.4901833"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Philadelphia", "state": "PA","location": {"lat": "39.9523350", "lon": "-75.1637890"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pittsburgh", "state": "PA","location": {"lat": "40.4406248", "lon": "-79.9958864"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Providence", "state": "RI","location": {"lat": "41.8239891", "lon": "-71.4128343"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Columbia", "state": "SC","location": {"lat": "34.0007104", "lon": "-81.0348144"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Sioux Falls", "state": "SD","location": {"lat": "43.5499749", "lon": "-96.7003270"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chattanooga", "state": "TN","location": {"lat": "35.0456297", "lon": "-85.3096801"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Clarksville", "state": "TN","location": {"lat": "36.5297706", "lon": "-87.3594529"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Chattanooga", "state": "TN","location": {"lat": "35.0653508", "lon": "-85.2491233"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Knoxville", "state": "TN","location": {"lat": "35.9606384", "lon": "-83.9207392"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Memphis", "state": "TN","location": {"lat": "35.1495343", "lon": "-90.0489801"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Nashville", "state": "TN","location": {"lat": "36.1658899", "lon": "-86.7844432"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "New South Memphis", "state": "TN","location": {"lat": "35.0867579", "lon": "-90.0567584"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Abilene", "state": "TX","location": {"lat": "32.4487364", "lon": "-99.7331439"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Amarillo", "state": "TX","location": {"lat": "35.2219971", "lon": "-101.8312969"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arlington", "state": "TX","location": {"lat": "32.7356870", "lon": "-97.1080656"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Austin", "state": "TX","location": {"lat": "30.2671530", "lon": "-97.7430608"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Beaumont", "state": "TX","location": {"lat": "30.0860459", "lon": "-94.1018461"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Brownsville", "state": "TX","location": {"lat": "25.9017472", "lon": "-97.4974838"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Carrollton", "state": "TX","location": {"lat": "32.9537349", "lon": "-96.8902816"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Corpus Christi", "state": "TX","location": {"lat": "27.8005828", "lon": "-97.3963810"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Dallas", "state": "TX","location": {"lat": "32.7830556", "lon": "-96.8066667"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Denton", "state": "TX","location": {"lat": "33.2148412", "lon": "-97.1330683"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "El Paso", "state": "TX","location": {"lat": "31.7587198", "lon": "-106.4869314"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Fort Worth", "state": "TX","location": {"lat": "32.7254090", "lon": "-97.3208496"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Garland", "state": "TX","location": {"lat": "32.9126240", "lon": "-96.6388833"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Grand Prairie", "state": "TX","location": {"lat": "32.7459645", "lon": "-96.9977846"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Houston", "state": "TX","location": {"lat": "29.7632836", "lon": "-95.3632715"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Irving", "state": "TX","location": {"lat": "32.8140177", "lon": "-96.9488945"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Killeen", "state": "TX","location": {"lat": "31.1171194", "lon": "-97.7277959"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Laredo", "state": "TX","location": {"lat": "27.5064070", "lon": "-99.5075421"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Lubbock", "state": "TX","location": {"lat": "33.5778631", "lon": "-101.8551665"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "McAllen", "state": "TX","location": {"lat": "26.2034071", "lon": "-98.2300124"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Mesquite", "state": "TX","location": {"lat": "32.7667955", "lon": "-96.5991593"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Pasadena", "state": "TX","location": {"lat": "29.6910625", "lon": "-95.2091006"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Plano", "state": "TX","location": {"lat": "33.0198431", "lon": "-96.6988856"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richardson", "state": "TX","location": {"lat": "32.9481789", "lon": "-96.7297206"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "San Antonio", "state": "TX","location": {"lat": "29.4241219", "lon": "-98.4936282"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Waco", "state": "TX","location": {"lat": "31.5493330", "lon": "-97.1466695"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Wichita Falls", "state": "TX","location": {"lat": "33.9137085", "lon": "-98.4933873"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Provo", "state": "UT","location": {"lat": "40.2338438", "lon": "-111.6585337"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Salt Lake City", "state": "UT","location": {"lat": "40.7607794", "lon": "-111.8910474"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Jordan", "state": "UT","location": {"lat": "40.6096698", "lon": "-111.9391031"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "West Valley City", "state": "UT","location": {"lat": "40.6916132", "lon": "-112.0010501"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Alexandria", "state": "VA","location": {"lat": "38.8048356", "lon": "-77.0469214"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Arlington", "state": "VA","location": {"lat": "38.8903896", "lon": "-77.0841446"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Chesapeake", "state": "VA","location": {"lat": "36.8190369", "lon": "-76.2749399"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "East Hampton", "state": "VA","location": {"lat": "37.0373684", "lon": "-76.3316100"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Hampton", "state": "VA","location": {"lat": "37.0298687", "lon": "-76.3452218"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Newport News", "state": "VA","location": {"lat": "36.9787588", "lon": "-76.4280030"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Norfolk", "state": "VA","location": {"lat": "36.8468146", "lon": "-76.2852183"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Portsmouth", "state": "VA","location": {"lat": "36.8354258", "lon": "-76.2982742"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Richmond", "state": "VA","location": {"lat": "37.5537575", "lon": "-77.4602617"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Virginia Beach", "state": "VA","location": {"lat": "36.8529263", "lon": "-75.9779850"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Bellevue", "state": "WA","location": {"lat": "47.6103770", "lon": "-122.2006786"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Seattle", "state": "WA","location": {"lat": "47.6062095", "lon": "-122.3320708"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Spokane", "state": "WA","location": {"lat": "47.6587803", "lon": "-117.4260466"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Tacoma", "state": "WA","location": {"lat": "47.2528769", "lon": "-122.4442906"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Vancouver", "state": "WA","location": {"lat": "45.6387281", "lon": "-122.6614861"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Green Bay", "state": "WI","location": {"lat": "44.5191590", "lon": "-88.0198260"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Madison", "state": "WI","location": {"lat": "43.0730517", "lon": "-89.4012302"}}'
+    curl -s -o /dev/null -XPOST "http://$eshost:9200/$esindex/city/" -d '{"city": "Milwaukee", "state": "WI","location": {"lat": "43.0389025", "lon": "-87.9064736"}}'
 }
 
-insert_data "$1" "$2"
+#insert_data "$1" "$2"
