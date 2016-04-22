@@ -1,0 +1,17 @@
+{
+    "mappings": {
+        "city": {
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "geo_point"
+                }
+            }
+        }
+    }
+}
