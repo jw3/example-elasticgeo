@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export GS_HOST="${GS_HOST:-geoserver}"
 export ES_HOST="${ES_HOST:-elastic}"
 export ES_INDEX="${ES_INDEX:-us_large_cities}"
 
@@ -17,6 +18,17 @@ main() {
 
     echo "Testing data;  results should be [San Francisco, Berkeley, Oakland, Richmond]"
     testdata "$ES_HOST" "$ES_INDEX" ${dir}/test.json
+
+
+    curl -s -u admin:geoserver \
+         -d '{"workspace":{"name":"exgeo","href":"com.github.jw3:exgeo"}}' \
+         -H 'Content-type: application/json' \
+         "$GS_HOST":8080/geoserver/rest/workspaces
+
+    curl -s -u admin:geoserver \
+         -d  @${dir}/store.json \
+         -H 'Content-type: application/json' \
+         "$GS_HOST":8080/geoserver/rest/workspaces/exgeo/datastores
 }
 
 main

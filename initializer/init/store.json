@@ -1,0 +1,50 @@
+{
+    "dataStore": {
+        "name": "example-data",
+        "type": "Elasticsearch",
+        "connectionParameters": {
+            "entry": [
+                {
+                    "@key": "index_name",
+                    "$": "us_large_cities"
+                },
+                {
+                    "@key": "cluster_name",
+                    "$": "elasticsearch"
+                },
+                {
+                    "@key": "elasticsearch_host",
+                    "$": "elastic"
+                },
+                {
+                    "@key": "use_local_node",
+                    "$": "false"
+                },
+                {
+                    "@key": "scroll_enabled",
+                    "$": "false"
+                },
+                {
+                    "@key": "scroll_time",
+                    "$": "120"
+                },
+                {
+                    "@key": "scroll_size",
+                    "$": "20"
+                },
+                {
+                    "@key": "search_indices",
+                    "$": "us_large_cities*"
+                },
+                {
+                    "@key": "elasticsearch_port",
+                    "$": "9300"
+                },
+                {
+                    "@key": "store_data",
+                    "$": "false"
+                }
+            ]
+        }
+    }
+}
